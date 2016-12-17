@@ -10,5 +10,59 @@
 	<script type="text/javascript" src="js/angular.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </head>
-<body></body>
-</html>
+
+
+
+<body ng-app="myApp" ng-controller = "customersCtrl">
+<div id="nav">
+	<div id="nav1">
+		<a href="http://localhost/Finalproject/"><h2 id="logo"><span>Book</span>Ing</h2></a>
+		<h2 class="fa fa-bars lg" id="menu"></h2>
+	</div>
+	<div id="nav2">
+			<br>
+			<a href="https://www.instagram.com/erbolatmamen/">We are in Instagram</a>
+	</div>
+</div>
+<div id="main">
+	
+	<div id="content" class="width100">
+		<div ng-repeat="x in hotels|filter:myVar|filter:myVar1" ng-style="{'background-image':'url(img/{{x.src}})'}" class="hotels">
+			<div class="info1">
+			</div>
+			<div class="info2">
+				<h3></h3>
+				<h3></h3>
+			</div>
+			<div class="info3"></div>
+			<div class="info4">
+				<label></label>
+				<a href="#">More</a>
+			</div>
+		</div>
+	</div>
+	<div id="booking">
+		<div id="head">
+			<h2>Prime Plaza</h2>
+		</div>
+		<div>
+			<label>Stars: </label>
+			<img src="img/star.gif"><img src="img/star.gif"><img src="img/star.gif"><img src="img/star.gif"><img src="img/star.gif">
+			<br><br>
+			<label></label>
+			<br><br>
+			<label></label>
+			<br><br>
+			<label>Choose number of rooms: </label>
+			<select ng-model="choise">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option velue="3">3</option>
+			</select>
+			<br><br><br>
+			<a href="#" >Booking</a>
+		</div>
+	</div>
+</div>
+<div id="back" ></div>
+</body>
