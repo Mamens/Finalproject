@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Project</title>
+	<title>FinalProject</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet/less" type="text/css" href="css/style.less">
 	<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
@@ -25,19 +25,56 @@
 	</div>
 </div>
 <div id="main">
-	
+	<aside id="aside">
+		<input type="text" ng-model="myVar" placeholder="Search"><label class="fa fa-search"></label>
+		<label id="country">Country : </label>
+		<select ng-model="myVar">
+			<option value="Kazakhstan">Kazakhstan</option>
+			<option value="Russia" selected="selected">Russia</option>
+			<option value="Arab Emirates">Arab Emirates</option>
+			<option value="Turkey">Turkey</option>
+		</select>
+		<label id="cities" ng-show="myVar == 'Kazakhstan' || myVar == 'Russia' || myVar == 'Arab Emirates' || myVar == 'Turkey'">Cities: </label>
+		<select ng-model="myVar1" ng-show="myVar == 'Kazakhstan'">
+			<option value="Almaty">Almaty</option>
+			<option value="Astana">Astana</option>
+			<option value="Aktau">Aktau</option>
+			<option value="Aktobe">Aktobe</option>
+			<option value="Atyrau">Atyrau</option>
+			<option value="Shymkent">Shymkent</option>
+		</select>
+		<select ng-model="myVar1"  ng-show="myVar == 'Russia'">
+			<option value="Moscow">Moscow</option>
+			<option value="Sochi">Sochi</option>
+			<option value="Saint-Petersburg">Saint-Petersburg</option>
+		</select>
+		<select ng-model="myVar1"  ng-show="myVar == 'Arab Emirates'">
+			<option value="Dubai">Dubai</option>
+		</select>
+		<select ng-model="myVar1" ng-show="myVar == 'Turkey'">
+			<option value="Istanbul">Istanbul</option>
+		</select>
+		<form id="auth">
+			<input class="auth" type="email" ng-model="login" placeholder="Login">
+			<input class="auth" type="password" ng-model="password" placeholder="Password">
+			<button type="submit" ng-click="sign()">Submit</button>
+		</form>
+		<div id="user">
+			<p>{{username +" -  $" +usercash}}</p>
+		</div>
+	</aside>
 	<div id="content" class="width100">
 		<div ng-repeat="x in hotels|filter:myVar|filter:myVar1" ng-style="{'background-image':'url(img/{{x.src}})'}" class="hotels">
 			<div class="info1">
 			</div>
 			<div class="info2">
-				<h3></h3>
-				<h3></h3>
+				<h3>{{x.country+" - "+x.city}}</h3>
+				<h3>{{x.name}}</h3>
 			</div>
 			<div class="info3"></div>
 			<div class="info4">
-				<label></label>
-				<a href="#">More</a>
+				<label>{{x.luxprice | currency:"USD $"}}</label>
+				<a href="#" ng-click="more()">More</a>
 			</div>
 		</div>
 	</div>
@@ -49,9 +86,9 @@
 			<label>Stars: </label>
 			<img src="img/star.gif"><img src="img/star.gif"><img src="img/star.gif"><img src="img/star.gif"><img src="img/star.gif">
 			<br><br>
-			<label></label>
+			<label>Price: ${{price*choise}}</label>
 			<br><br>
-			<label></label>
+			<label>Rooms: {{rooms}}</label>
 			<br><br>
 			<label>Choose number of rooms: </label>
 			<select ng-model="choise">
@@ -60,9 +97,9 @@
 				<option velue="3">3</option>
 			</select>
 			<br><br><br>
-			<a href="#" >Booking</a>
+			<a href="#" ng-click="booking()">Booking</a>
 		</div>
 	</div>
 </div>
-<div id="back" ></div>
+<div id="back" ng-click = "back()"></div>
 </body>

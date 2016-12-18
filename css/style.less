@@ -62,7 +62,172 @@ body{
 			}
 		}
 	}
-	
+	#main{
+		margin-top: 70px;
+		width: 100%;
+		aside{
+			position: fixed;
+			z-index: 0;
+			width: 270px;
+			height: 600px;
+			background-color: #3B3836;
+			float: left;
+			margin-left: -270px;
+			transition: margin 0.5s;
+			input{
+			   margin-top: 20px;
+			   margin-left: 60px;
+			   text-align: center;
+			   border: 1px solid #cccccc; //цвет рамки
+			   border-top-left-radius: 3px;
+			   border-bottom-left-radius: 3px; 
+			   background: #ffffff; // желательно прописывать, так как в Chrome при сохранных данных оно может быть желтым
+			   height: 30px; // высота на свое усмотрение
+			   width: 150px; // ширина на свое усмотрение
+			   color: #cccccc; //цвет шрифта в обычном состоянии
+			   font-size: 11px; // Размер шрифта
+			   font-family: Tahoma; // Стиль шрифта
+					}
+			form{
+				display: none;
+				position: relative;
+				top:120px;
+				button{
+					margin-top: 25px;
+					margin-left:110px;
+					color: #F6F5F7;
+					background-color:#EA5515;
+					border: 0;
+					padding: 10px;
+					border-radius: 4px;
+					font-family: 'Lato', sans-serif;
+				}
+			}
+			div#user{
+				display: none;
+				p{
+					color: #F6F5F7;
+					font-family: 'Lato', sans-serif;
+					margin-left: 50px;
+				}
+			}
+			input:focus{
+				color: #000000;
+  				border: 1px solid white;
+			}
+			label.fa.fa-search{
+				border: 1px solid #cccccc;
+				color:#3B3836;
+				background-color: white;
+				position: relative;
+				top:1px;
+				padding: 8px;
+				border-top-right-radius: 3px;
+				border-bottom-right-radius: 3px;
+			}
+			label#country,label#cities{
+				margin-left: 60px;
+				font-family: 'Lato', sans-serif;
+				color: #F6F5F7;
+			}
+			label#country,select{
+				margin-top: 20px; 
+			}
+		}
+		#content{
+			z-index: -1;
+			float:right;
+			transition: width 0.5s;
+			background-color: white;
+			div.hotels:hover div.info3 {
+				opacity:0.8;
+			}
+			div.hotels:hover div.info4{
+				display: block;
+			}
+			div.hotels{
+				border-radius: 3px;
+				width: 297px;
+				height: 270px;
+				background-color:white;
+				background-size: cover;
+				margin:20px;
+				-webkit-box-shadow: 2px -1px 10px -1px rgba(0,0,0,0.65);
+				-moz-box-shadow: 2px -1px 10px -1px rgba(0,0,0,0.65);
+				box-shadow: 2px -1px 10px -1px rgba(0,0,0,0.65);
+				img{
+					position: relative;
+					left:10px;
+					margin: 5px;
+					width: 90%;
+					height: 70%;
+					border:  solid #A1A09F 2px;
+				}
+
+				div.info1,div.info2,div.info3{
+					margin: 0;
+					width: 100%;
+				}
+				div.info1{
+				height: 25%;
+				opacity: 0.7;
+				background-color: #3B3836;
+				border-radius: 3px 3px 0 0;
+					}
+				div.info2{
+					position: relative;
+					top:-60px;
+					z-index: 2;
+					height: 20%;
+					h3{
+						margin-top: 0px;
+						height: 20%;
+						text-align: center;
+						color: #F1F1F1;
+						font-family: 'Lato', sans-serif;
+					}
+				}
+		
+				div.info3{
+					z-index: 1;
+					transition : opacity 0.5s;
+					height: 25%;
+					background-color: #3B3836;
+					opacity: 0;
+					margin-top:81px;
+					border-radius: 0  0 3px 3px;
+				}
+				div.info4{
+					position: relative;
+					z-index: 2;
+					display: none;					
+					height: 25%;
+					margin-top:-67px;
+					border-radius: 0  0 3px 3px; 
+					label{
+						position: relative;
+						top:10px;
+						left: 10px;
+						color: white;
+						font-family: 'Lato', sans-serif;
+					}
+					a{		
+						position: relative;
+						left:120px;
+						top: 25px;
+						border-radius: 3px;
+						padding: 10px;
+						background-color: #EA5515;
+						text-decoration: none;
+						font-family: 'Lato', sans-serif;
+						color: #F1F1F1;
+					}
+					a:hover{
+						background-color:; 
+					}
+				}
+			}
+		}
 
 		.width100{
 			width: 100%;
